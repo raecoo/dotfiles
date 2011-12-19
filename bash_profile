@@ -15,8 +15,24 @@ export CLICOLOR=1
 
 if [ -s ~/.bash_aliases ] ; then source ~/.bash_aliases ; fi
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-  
+
 function svim()
 {
   (rvm system; unset GEM_PATH GEM_HOME; command mvim "$@")
+}
+
+function ci
+{
+  git ci -a -m "$@"
+}
+
+function gco
+{
+  git co "$@"
+}
+
+function log
+{
+  > log/development.log
+  tail -f -n200 log/development.log
 }
