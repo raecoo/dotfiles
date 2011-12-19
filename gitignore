@@ -1,0 +1,4 @@
+*~
+.DS_Store
+gem
+setup_load_paths.rb
