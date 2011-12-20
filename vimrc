@@ -48,7 +48,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,coverage
 
 " Status bar
 set laststatus=2
@@ -126,4 +126,4 @@ set showcmd
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 let g:SuperTabMappingForward="<tab>" 
-set wildignore+=*.o,*.obj,.git,vendor/ruby/**
+set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage
