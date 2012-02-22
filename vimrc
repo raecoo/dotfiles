@@ -22,6 +22,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
+Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on
 

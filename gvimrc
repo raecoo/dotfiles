@@ -1,7 +1,5 @@
 if has("gui_macvim")
 
-  Bundle 'git://git.wincent.com/command-t.git'
-
   " Command-T configuration
   let g:CommandTMaxHeight=20
 
