@@ -1,4 +1,16 @@
 if has("gui_macvim")
+
+  Bundle 'git://git.wincent.com/command-t.git'
+
+  " Command-T configuration
+  let g:CommandTMaxHeight=20
+
+  augroup CommandTExtension
+    autocmd!
+    autocmd FocusGained * CommandTFlush
+    autocmd BufWritePost * CommandTFlush
+  augroup END
+
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
@@ -13,7 +25,7 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
-  
+
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
   vmap <D-[> <gv
@@ -60,3 +72,14 @@ set guioptions-=T
 
 set guioptions=aAce
 set guifont=Monaco:h12
+
+autocmd VimEnter * NERDTree "open nerdtree automatic
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=25
+
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplorerMoreThanOne = 0

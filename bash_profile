@@ -1,7 +1,7 @@
 LDFLAGS="$LDFLAGS /usr/local/Cellar/libxml2/2.7.7/lib"
 CPPFLAGS="$CPPFLAGS /usr/local/Cellar/libxml2/2.7.7/include"
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 

@@ -5,9 +5,8 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'gmarik/snipmate.vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'gmarik/snipmate.vim'
+"Bundle 'honza/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'surround.vim'
@@ -22,6 +21,7 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'skammer/vim-css-color'
 Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
 
 filetype plugin indent on
 
@@ -58,9 +58,6 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
-
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
@@ -128,8 +125,3 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 let g:SuperTabMappingForward="<tab>" 
 set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage
 
-augroup CommandTExtension
-  autocmd!
-  autocmd FocusGained * CommandTFlush
-  autocmd BufWritePost * CommandTFlush
-augroup END
