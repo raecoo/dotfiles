@@ -1,21 +1,21 @@
 if has("gui_macvim")
 
   " Command-T configuration
-  let g:CommandTMaxHeight=20
+  "let g:CommandTMaxHeight=20
 
-  augroup CommandTExtension
-    autocmd!
-    autocmd FocusGained * CommandTFlush
-    autocmd BufWritePost * CommandTFlush
-  augroup END
+  "augroup CommandTExtension
+    "autocmd!
+    "autocmd FocusGained * CommandTFlush
+    "autocmd BufWritePost * CommandTFlush
+  "augroup END
 
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
   " Command-T for CommandT
-  macmenu &File.New\ Tab key=<D-T>
-  map <D-t> :CommandT<CR>
-  imap <D-t> <Esc>:CommandT<CR>
+  "macmenu &File.New\ Tab key=<D-T>
+  "map <D-t> :CommandT<CR>
+  "imap <D-t> <Esc>:CommandT<CR>
 
   map <D-\> :NERDTreeToggle<CR>
   imap <D-\> <Esc>:NERDTreeToggle<CR>
@@ -79,8 +79,8 @@ let NERDTreeShowBookmarks=1
 let NERDTreeChDirMode=2
 let NERDTreeWinSize=25
 
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-let g:miniBufExplorerMoreThanOne = 0
+"let g:miniBufExplMapWindowNavVim = 1 
+"let g:miniBufExplMapWindowNavArrows = 1 
+"let g:miniBufExplMapCTabSwitchBufs = 1 
+"let g:miniBufExplModSelTarget = 1 
+"let g:miniBufExplorerMoreThanOne = 0
