@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'gmarik/snipmate.vim'
-Bundle 'honza/snipmate-snippets'
+"Bundle 'honza/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'surround.vim'
@@ -16,7 +16,7 @@ Bundle 'taq/vim-rspec.git'
 Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-markdown'
+"Bundle 'tpope/vim-markdown'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'skammer/vim-css-color'
 Bundle 'ervandew/supertab'
@@ -81,7 +81,7 @@ endfunction
 au FileType make set noexpandtab
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+"au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufNewFile,BufRead *.json set ft=javascript
 au BufRead,BufNewFile *.txt call s:setupWrapping()
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
@@ -125,7 +125,7 @@ set showcmd
 
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 let g:SuperTabMappingForward="<tab>" 
-set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage
+set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage,.sass-cache,tmp
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_reversed = 0

@@ -20,6 +20,12 @@ if has("gui_macvim")
   map <D-\> :NERDTreeToggle<CR>
   imap <D-\> <Esc>:NERDTreeToggle<CR>
 
+  map <D-d> :vsplit<CR>
+  imap <D-d> <Esc>:vsplit<CR>
+
+  map <S-d> :split<CR>
+  imap <S-d> <Esc>:split<CR>
+
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
 
