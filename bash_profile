@@ -4,6 +4,7 @@ CPPFLAGS="$CPPFLAGS /usr/local/Cellar/libxml2/2.7.7/include"
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
+export NODE_PATH="/usr/local/lib/node"
 
 export EDITOR='mate -w'
 export JRUBY_OPTS='--1.9'
@@ -32,6 +33,11 @@ function glog()
 function gco()
 {
   git co "$@"
+}
+
+function gpush()
+{
+  git push -u
 }
 
 function log()

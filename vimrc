@@ -5,8 +5,8 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'gmarik/snipmate.vim'
-"Bundle 'honza/snipmate-snippets'
+"Bundle 'gmarik/snipmate.vim'
+Bundle 'honza/snipmate-snippets'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'surround.vim'
@@ -24,6 +24,9 @@ Bundle 'altercation/vim-colors-solarized'
 "Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
 "Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
+Bundle 'git://github.com/nono/vim-handlebars.git'
+Bundle 'git://github.com/othree/xml.vim.git'
+Bundle 'git://github.com/janx/vim-rubytest.git'
 
 filetype plugin indent on
 
@@ -68,7 +71,7 @@ map <C-\> :tnext<CR>
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
+        \| exe "normal g'\"" | endif
 endif
 
 function s:setupWrapping()
@@ -129,3 +132,18 @@ set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage,.sass-cache,tmp
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_reversed = 0
+
+
+map <c-\> :NERDTreeToggle<CR>
+imap <c-\> <Esc>:NERDTreeToggle<CR>
+
+map <c-d> :vsplit<CR>
+imap <c-d> <Esc>:vsplit<CR>
+
+map <S-d> :split<CR>
+"imap <S-d> <Esc>:split<CR>
+
+map <S-t> <Plug>RubyFileRun
+"let g:rubytest_in_quickfix = 1
+
+

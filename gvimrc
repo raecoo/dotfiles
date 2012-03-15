@@ -17,6 +17,11 @@ if has("gui_macvim")
   "map <D-t> :CommandT<CR>
   "imap <D-t> <Esc>:CommandT<CR>
 
+  " CtrlP
+  macmenu &File.New\ Tab key=<D-T>
+  map <D-t> :CtrlP<CR>
+  imap <D-t> <Esc>:CtrlP<CR>
+
   map <D-\> :NERDTreeToggle<CR>
   imap <D-\> <Esc>:NERDTreeToggle<CR>
 
@@ -24,7 +29,7 @@ if has("gui_macvim")
   imap <D-d> <Esc>:vsplit<CR>
 
   map <S-d> :split<CR>
-  imap <S-d> <Esc>:split<CR>
+  "imap <S-d> <Esc>:split<CR>
 
   " Command-Shift-F for Ack
   map <D-F> :Ack<space>
