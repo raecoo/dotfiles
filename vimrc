@@ -5,28 +5,28 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-"Bundle 'gmarik/snipmate.vim'
-Bundle 'honza/snipmate-snippets'
+Bundle 'ack.vim'
+Bundle 'surround.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'surround.vim'
-Bundle 'ack.vim'
 Bundle 'tpope/vim-rails.git'
 Bundle 'taq/vim-rspec.git'
 Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-haml'
 Bundle 'kchmck/vim-coffee-script'
-"Bundle 'tpope/vim-markdown'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'skammer/vim-css-color'
-Bundle 'ervandew/supertab'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
-"Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
-Bundle 'git://github.com/nono/vim-handlebars.git'
 Bundle 'git://github.com/othree/xml.vim.git'
 Bundle 'git://github.com/janx/vim-rubytest.git'
+"Bundle 'tpope/vim-haml'
+"Bundle 'tpope/vim-markdown'
+"Bundle 'ervandew/supertab'
+"Bundle 'gmarik/snipmate.vim'
+"Bundle 'honza/snipmate-snippets'
+"Bundle 'git://github.com/nono/vim-handlebars.git'
+"Bundle 'git://github.com/fholgado/minibufexpl.vim.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on
 
@@ -44,6 +44,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
+set clipboard=unnamed
 
 " Searching
 set hlsearch
@@ -132,13 +133,6 @@ set wildignore+=*.o,*.obj,.git,vendor/ruby/**,coverage,.sass-cache,tmp
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_match_window_reversed = 0
-
-
-map <c-\> :NERDTreeToggle<CR>
-imap <c-\> <Esc>:NERDTreeToggle<CR>
-
-map <c-d> :vsplit<CR>
-imap <c-d> <Esc>:vsplit<CR>
 
 map <S-d> :split<CR>
 "imap <S-d> <Esc>:split<CR>
