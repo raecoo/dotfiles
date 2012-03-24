@@ -6,7 +6,7 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 export NODE_PATH="/usr/local/lib/node"
 
-export EDITOR='mate -w'
+export EDITOR='vim'
 export JRUBY_OPTS='--1.9'
 
 source /usr/local/etc/bash_completion.d/git-completion.bash
@@ -16,7 +16,7 @@ export CLICOLOR=1
 
 
 if [ -s ~/.bash_aliases ] ; then source ~/.bash_aliases ; fi
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 
 
@@ -35,7 +35,7 @@ function gco()
   git co "$@"
 }
 
-function gpush()
+function push()
 {
   git push -u
 }
@@ -44,12 +44,6 @@ function log()
 {
   > log/development.log
   tail -f -n200 log/development.log
-}
-
-function svim()
-{
-  # (rvm system; unset GEM_PATH GEM_HOME; command mvim "$@")
-  (rbenv shell system ; command mvim "$@")
 }
 
 eval "$(rbenv init -)"

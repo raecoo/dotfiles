@@ -64,6 +64,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
@@ -108,8 +109,8 @@ set modelines=10
 " Default color scheme
 syntax enable
 set background=dark
-colorscheme solarized
-" color desert
+" colorscheme solarized
+colorscheme desert
 
 " Directories for swp files
 set backupdir=~/.vim/backup
