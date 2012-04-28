@@ -19,6 +19,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/othree/xml.vim.git'
 Bundle 'git://github.com/janx/vim-rubytest.git'
+Bundle 'git://github.com/mattn/zencoding-vim'
 "Bundle 'tpope/vim-haml'
 "Bundle 'tpope/vim-markdown'
 "Bundle 'ervandew/supertab'
@@ -109,8 +110,8 @@ set modelines=10
 " Default color scheme
 syntax enable
 set background=dark
-" colorscheme solarized
-colorscheme desert
+colorscheme solarized
+"colorscheme desert
 
 " Directories for swp files
 set backupdir=~/.vim/backup
