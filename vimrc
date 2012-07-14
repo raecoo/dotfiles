@@ -9,7 +9,6 @@ Bundle 'ack.vim'
 Bundle 'surround.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-rails.git'
 Bundle 'taq/vim-rspec.git'
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
@@ -20,6 +19,8 @@ Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'git://github.com/othree/xml.vim.git'
 Bundle 'git://github.com/janx/vim-rubytest.git'
 Bundle 'git://github.com/mattn/zencoding-vim'
+Bundle 'tpope/vim-rails.git'
+Bundle 'git://github.com/drmingdrmer/xptemplate'
 "Bundle 'tpope/vim-haml'
 "Bundle 'tpope/vim-markdown'
 "Bundle 'ervandew/supertab'
@@ -65,7 +66,7 @@ set noequalalways
 " NERDTree configuration
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen = 1
+"let NERDTreeQuitOnOpen = 1
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>

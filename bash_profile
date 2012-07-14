@@ -1,10 +1,9 @@
-LDFLAGS="$LDFLAGS /usr/local/Cellar/libxml2/2.7.7/lib"
-CPPFLAGS="$CPPFLAGS /usr/local/Cellar/libxml2/2.7.7/include"
+#LDFLAGS="$LDFLAGS /usr/local/Cellar/libxml2/2.7.7/lib"
+#CPPFLAGS="$CPPFLAGS /usr/local/Cellar/libxml2/2.7.7/include"
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
-export NODE_PATH="/usr/local/lib/node"
 
 export EDITOR='vim'
 export JRUBY_OPTS='--1.9'
@@ -16,8 +15,6 @@ export CLICOLOR=1
 
 
 if [ -s ~/.bash_aliases ] ; then source ~/.bash_aliases ; fi
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
-
 
 
 function gci()
@@ -44,6 +41,22 @@ function log()
 {
   > log/development.log
   tail -f -n200 log/development.log
+}
+
+function postgres_start()
+{
+  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+}
+
+function postgres_stop()
+{
+  pg_ctl -D /usr/local/var/postgres stop -s -m fast
+}
+
+function start_dev_processes()
+{
+  sudo nginx
+  mongod run --config /usr/local/etc/mongod.conf
 }
 
 eval "$(rbenv init -)"

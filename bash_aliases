@@ -8,3 +8,5 @@ alias netgrep='netstat -an | grep'
 
 alias gst="git st"
 alias pt='touch tmp/restart.txt'
+
+alias s='subl'

@@ -4,7 +4,6 @@
 :update_sources: true
 :sources:
 - http://rubygems.org/
-- http://ci.intridea.com:4567/
 :backtrace: false
 :bulk_threshold: 1000
 #:gem: --no-ri --no-rdoc
