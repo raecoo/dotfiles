@@ -5,14 +5,23 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 
-export EDITOR='vim'
+#export EDITOR='vim'
 export JRUBY_OPTS='--1.9'
 
-source /usr/local/etc/bash_completion.d/git-completion.bash
+#source /usr/local/etc/bash_completion.d/git-completion.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\w$(__git_ps1 "(%s)")$ '
 export CLICOLOR=1
 
+# for Ruby GC
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
 
 if [ -s ~/.bash_aliases ] ; then source ~/.bash_aliases ; fi
 
