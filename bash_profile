@@ -3,14 +3,25 @@
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
+export PATH="$HOME/android-sdk/tools:$PATH"
+export PATH="$PATH:/usr/local/share/npm/bin"
+export ANDROID_HOME="$HOME/android-sdk/tools:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 
-#export EDITOR='vim'
+
+export ANDROIDSDK="$HOME/android-sdk"
+export ANDROIDNDK="$HOME/android-ndk"
+export ANDROIDNDKVER=r8
+export ANDROIDAPI=14
+
+export EDITOR='vim'
 export JRUBY_OPTS='--1.9'
 
-#source /usr/local/etc/bash_completion.d/git-completion.bash
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+source /usr/local/etc/bash_completion.d/git-completion.bash
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+if [ -f $(brew --prefix)/etc/bash_completion.d ]; then
+  . $(brew --prefix)/etc/bash_completion.d
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='\w$(__git_ps1 "(%s)")$ '
@@ -46,6 +57,11 @@ function push()
   git push -u
 }
 
+function pull()
+{
+  git pull -u
+}
+
 function log()
 {
   > log/development.log
@@ -69,3 +85,6 @@ function start_dev_processes()
 }
 
 eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
