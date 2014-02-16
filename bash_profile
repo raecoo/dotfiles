@@ -1,11 +1,14 @@
 #LDFLAGS="$LDFLAGS /usr/local/Cellar/libxml2/2.7.7/lib"
 #CPPFLAGS="$CPPFLAGS /usr/local/Cellar/libxml2/2.7.7/include"
+#LDFLAGS:  -L/usr/local/opt/libxml2/lib
+#CPPFLAGS: -I/usr/local/opt/libxml2/include
+
+export ANDROID_HOME="$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin/ruby-build:$PATH"
-export PATH="$HOME/android-sdk/tools:$PATH"
+export PATH="$ANDROID_HOME:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin"
-export ANDROID_HOME="$HOME/android-sdk/tools:$PATH"
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home"
 
 
