@@ -1,3 +1,5 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export PATH="$HOME/.rbenv/shims:$PATH"
 
@@ -15,6 +17,10 @@ export CLICOLOR=1
 
 if [ -s ~/.bash_aliases ] ; then source ~/.bash_aliases ; fi
 
+function hs(){
+  python -m SimpleHTTPServer "$@"
+}
+
 function gci()
 {
   git commit -a -m "$@"
@@ -22,7 +28,7 @@ function gci()
 
 function glog()
 {
-  git log -n10
+  git log --graph --date=local --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' "$@"
 }
 
 function gco()
@@ -56,8 +62,22 @@ function start_dev_processes()
   sudo nginx
   mongod run --config /usr/local/etc/mongod.conf
 }
+function refresh_dns()
+{
+  sudo killall -HUP mDNSResponder
+}
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export GOPATH=$HOME/projects/go
+export PATH=$PATH:$GOPATH/bin
+export PATH="/usr/local/sbin:$PATH"
+
+function sdocker(){
+  eval "$(docker-machine env default)"
+}
+
+function dbbrowser {
+  nohup /Applications/datazenit-0.9.27/bin/datazenit &
+}
