@@ -83,6 +83,7 @@ function sdocker(){
 }
 
 function proxy() {
+  # https://github.com/shadowsocks/shadowsocks/wiki/Using-Shadowsocks-with-Command-Line-Tools
   proxychains4 "$@"
   # privoxy configuration
   # privoxy  /usr/local/etc/privoxy/config
