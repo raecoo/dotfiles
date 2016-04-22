@@ -28,7 +28,7 @@ function gci()
 
 function glog()
 {
-  git log --graph --date=local --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' "$@"
+  git log -n10 --graph --date=local --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' "$@"
 }
 
 function gco()
@@ -57,11 +57,15 @@ function kmux()
   tmux kill-session -t "$@"
 }
 
-function start_dev_processes()
+function pgr()
 {
-  sudo nginx
-  mongod run --config /usr/local/etc/mongod.conf
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost "$@"
 }
+function pgd()
+{
+  pg_dump -Fc --no-acl --no-owner -h localhost "$@"
+}
+
 function refresh_dns()
 {
   sudo killall -HUP mDNSResponder
@@ -78,6 +82,10 @@ function sdocker(){
   eval "$(docker-machine env default)"
 }
 
-function dbbrowser {
-  nohup /Applications/datazenit-0.9.27/bin/datazenit &
+function proxy() {
+  proxychains4 "$@"
+  # privoxy configuration
+  # privoxy  /usr/local/etc/privoxy/config
+  # export http_proxy='http://127.0.0.1:6152'
+  # export https_proxy='http://127.0.0.1:6152'
 }
