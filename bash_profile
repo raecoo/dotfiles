@@ -1,8 +1,5 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-export PATH="$HOME/.rbenv/shims:$PATH"
-
 export EDITOR='vim'
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -57,6 +54,11 @@ function kmux()
   tmux kill-session -t "$@"
 }
 
+function mux()
+{
+  tmuxinator start "$@"
+}
+
 function pgr()
 {
   pg_restore --verbose --clean --no-acl --no-owner -h localhost "$@"
@@ -74,19 +76,9 @@ function refresh_dns()
 export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 eval "$(rbenv init -)"
 
-export GOPATH=$HOME/projects/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/sbin:$PATH"
 
-function sdocker(){
-  eval "$(docker-machine env default)"
-}
-
-function proxy() {
-  # https://github.com/shadowsocks/shadowsocks/wiki/Using-Shadowsocks-with-Command-Line-Tools
-  proxychains4 "$@"
-  # privoxy configuration
-  # privoxy  /usr/local/etc/privoxy/config
-  # export http_proxy='http://127.0.0.1:6152'
-  # export https_proxy='http://127.0.0.1:6152'
-}
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
